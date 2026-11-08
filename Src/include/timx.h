@@ -119,7 +119,7 @@ X(counter,                               CNT,     CNT,         Counter          
 X(prescaler,                             PSC,     PSC,         Prescaler                          )\
 \
 /*************************************** TIMx ARR REGISTER ***************************************/\
-X(auto_reload_reister,                   ARR,     ARR,         AutoReloadRegister                 )\
+X(auto_reload_register,                   ARR,     ARR,         AutoReloadRegister                 )\
 \
 /*************************************** TIMx CCR1 REGISTER **************************************/\
 X(capture_compare_1_reister,             CCR1,    CCR1,        CaptureCompare1Register            )\
