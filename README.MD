@@ -45,6 +45,6 @@ This project is actively under development. General-purpose timers **TIM2–TIM5
 
 *Note: The core engine is finalized. Support for all remaining hardware timers is actively being integrated and will be included in the final stable release.*
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**. It is completely free, open for any modification, and can be used in both commercial and private projects. We warmly welcome community contributions and Pull Requests!
