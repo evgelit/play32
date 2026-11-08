@@ -24,7 +24,7 @@ void init_timer_example(void) {
     play32_timx_set_auto_reload_preload_enable(PLAY32_TIM2, PLAY32_TIMx_SWITCH_ENABLED);
     
     // 2. Set Period (ARR) and Prescaler (PSC) directly
-    play32_timx_set_auto_reload_value(PLAY32_TIM2, 999); // 1000 clock cycles period
+    play32_timx_set_auto_reload_reister(PLAY32_TIM2, 999); // 1000 clock cycles period
     play32_timx_set_prescaler(PLAY32_TIM2, 83);          // Clock frequency division by 84
     
     // 3. Start the timer counter
