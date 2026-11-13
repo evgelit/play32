@@ -34,16 +34,19 @@ void init_timer_example(void) {
 
 ## Development Status
 
-This project is actively under development. General-purpose timers **TIM2–TIM5 are 100% complete and fully operational**. Work is currently ongoing to expand this architecture to the remaining periphery of the MCU.
+This project is actively under development. General-purpose timers (**TIM2–TIM5**) and General-Purpose I/O (**GPIO**) are **100% complete and fully operational**. Work is currently ongoing to expand this architecture to the remaining periphery of the MCU.
 
 - [x] **TIM2–TIM5 (General-Purpose Timers): Fully Completed (100%)**
-    - [x] Core structures, control logic (CR1, CR2, SMCR, DIER)
-    - [x] Counters, prescalers, auto-reload layout (CNT, PSC, ARR)
-    - [x] All Capture/Compare channels (CCR1–CCR4, CCER)
-    - [x] Advanced DMA Burst control (DCR, DMAR)
+  - [x] Core structures, control logic (`CR1`, `CR2`, `SMCR`, `DIER`)
+  - [x] Counters, prescalers, auto-reload layout (`CNT`, `PSC`, `ARR`)
+  - [x] All Capture/Compare channels (`CCR1`–`CCR4`, `CCER`)
+  - [x] Advanced DMA Burst control (`DCR`, `DMAR`)
+- [x] **GPIO (General-Purpose I/O): Fully Completed (100%)**
+  - [x] Port addressing & base peripheral mapping (`GPIOA`–`GPIOE`, `GPIOH`)
+  - [x] Pin configuration & mode control (`MODER`, `OTYPER`, `OSPEEDR`, `PUPDR`)
+  - [x] Atomic I/O data operations (`IDR`, `ODR`, `BSRR`)
+  - [x] Configuration lock sequence & alternate functions (`LCKR`, `AFRL`, `AFRH`)
 - [ ] Remaining MCU periphery — *In Progress*
-
-*Note: The core engine is finalized. Support for all remaining hardware timers is actively being integrated and will be included in the final stable release.*
 
 ## License
 
