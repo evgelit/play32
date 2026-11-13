@@ -159,36 +159,38 @@ X(capture_compare_2_overcapture_flag,    SR,      CC2OF                         
 X(capture_compare_3_overcapture_flag,    SR,      CC3OF                                           )\
 X(capture_compare_4_overcapture_flag,    SR,      CC4OF                                           )\
 
-#define GENERATE_SET_FUNCTION(short_name, _reg, _sub_reg, _type) \
-    /** @brief Sets the field short_name in TIMx register. */ \
-    static inline void play32_timx_set_##short_name(\
-        PLAY32_TIMx_TypeDef *timx, const PLAY32_TIMx_##_reg##_##_type value\
-    ) {\
-        timx->_reg = (timx->_reg & ~(PLAY32_TIMx_##_reg##_##_sub_reg##_MSK)) \
-            | (((uint32_t)value << (PLAY32_TIMx_##_reg##_##_sub_reg##_POS)) & (PLAY32_TIMx_##_reg##_##_sub_reg##_MSK));\
+#define GENERATE_SET_FUNCTION(short_name, _reg, _sub_reg, _type)                \
+    /** @brief Sets the field short_name in TIMx register. */                   \
+    static inline void play32_timx_set_##short_name(                            \
+        PLAY32_TIMx_TypeDef *timx,                                              \
+        const PLAY32_TIMx_##_reg##_##_type value                                \
+    ) {                                                                         \
+        timx->_reg = (timx->_reg & ~(PLAY32_TIMx_##_reg##_##_sub_reg##_MSK))    \
+            | (((uint32_t)value << (PLAY32_TIMx_##_reg##_##_sub_reg##_POS))     \
+            & (PLAY32_TIMx_##_reg##_##_sub_reg##_MSK));                         \
     }
 
-#define GENERATE_GET_FUNCTION(short_name, _reg, _sub_reg, _type) \
-    /** @brief Sets the field short_name in TIMx register. */ \
-    static inline PLAY32_TIMx_##_reg##_##_type play32_timx_get_##short_name(\
-        const PLAY32_TIMx_TypeDef *timx\
-    ) { \
-        return (PLAY32_TIMx_##_reg##_##_type)\
-            ((timx->_reg & (PLAY32_TIMx_##_reg##_##_sub_reg##_MSK)) >> (PLAY32_TIMx_##_reg##_##_sub_reg##_POS)); \
+#define GENERATE_GET_FUNCTION(short_name, _reg, _sub_reg, _type)                \
+    /** @brief Sets the field short_name in TIMx register. */                   \
+    static inline PLAY32_TIMx_##_reg##_##_type play32_timx_get_##short_name(    \
+        const PLAY32_TIMx_TypeDef *timx                                         \
+    ) {                                                                         \
+        return (PLAY32_TIMx_##_reg##_##_type)                                   \
+            ((timx->_reg & (PLAY32_TIMx_##_reg##_##_sub_reg##_MSK))             \
+            >> (PLAY32_TIMx_##_reg##_##_sub_reg##_POS));                        \
     }
 
-#define GENERATE_RESET_FUNCTION(short_name, _reg, _sub_reg) \
-    /** @brief Sets the field short_name in TIMx register. */ \
-    static inline void play32_timx_reset_##short_name(\
-        PLAY32_TIMx_TypeDef *timx\
-    ) { \
-        timx->_reg = ~(PLAY32_TIMx_##_reg##_##_sub_reg##_MSK); \
-    }\
+#define GENERATE_RESET_FUNCTION(short_name, _reg, _sub_reg)       \
+    /** @brief Sets the field short_name in TIMx register. */     \
+    static inline void play32_timx_reset_##short_name(            \
+        PLAY32_TIMx_TypeDef *timx                                 \
+    ) {                                                           \
+        timx->_reg = ~(PLAY32_TIMx_##_reg##_##_sub_reg##_MSK);    \
+    }
 
 TIMx_REGISTERS_TABLE(GENERATE_SET_FUNCTION);
 TIMx_REGISTERS_TABLE(GENERATE_GET_FUNCTION);
 TIMx_STATUS_FLAG_TABLE(GENERATE_RESET_FUNCTION);
-
 
 #undef AS_SET_FUNCTION
 #undef AS_GET_FUNCTION
