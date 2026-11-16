@@ -188,9 +188,19 @@ X(capture_compare_4_overcapture_flag,    SR,      CC4OF                         
         timx->_reg = ~(PLAY32_TIMx_##_reg##_##_sub_reg##_MSK);    \
     }
 
+#define GENERATE_IS_SET_FUNCTION(short_name, _reg, _sub_reg)       \
+        /** @brief Checks if the field short_name is set in TIMx register. */     \
+    static inline bool play32_timx_is_set_##short_name(          \
+        const PLAY32_TIMx_TypeDef *timx \
+    ) {                                                           \
+        return ((timx->_reg & (PLAY32_TIMx_##_reg##_##_sub_reg##_MSK))             \
+        >> (PLAY32_TIMx_##_reg##_##_sub_reg##_POS)) == 1UL;  \
+    }
+
 TIMx_REGISTERS_TABLE(GENERATE_SET_FUNCTION);
 TIMx_REGISTERS_TABLE(GENERATE_GET_FUNCTION);
 TIMx_STATUS_FLAG_TABLE(GENERATE_RESET_FUNCTION);
+TIMx_STATUS_FLAG_TABLE(GENERATE_IS_SET_FUNCTION);
 
 #undef AS_SET_FUNCTION
 #undef AS_GET_FUNCTION

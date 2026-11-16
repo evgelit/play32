@@ -21,22 +21,22 @@
 
 #define GPIOx_REGISTERS_TABLE(X) \
 /************************ GPIOx MODER REGISTER ************************/\
-X(moder0,                 MODER,     MODER_0,     Mode                 )\
-X(moder1,                 MODER,     MODER_1,     Mode                 )\
-X(moder2,                 MODER,     MODER_2,     Mode                 )\
-X(moder3,                 MODER,     MODER_3,     Mode                 )\
-X(moder4,                 MODER,     MODER_4,     Mode                 )\
-X(moder5,                 MODER,     MODER_5,     Mode                 )\
-X(moder6,                 MODER,     MODER_6,     Mode                 )\
-X(moder7,                 MODER,     MODER_7,     Mode                 )\
-X(moder8,                 MODER,     MODER_8,     Mode                 )\
-X(moder9,                 MODER,     MODER_9,     Mode                 )\
-X(moder10,                MODER,     MODER_10,    Mode                 )\
-X(moder11,                MODER,     MODER_11,    Mode                 )\
-X(moder12,                MODER,     MODER_12,    Mode                 )\
-X(moder13,                MODER,     MODER_13,    Mode                 )\
-X(moder14,                MODER,     MODER_14,    Mode                 )\
-X(moder15,                MODER,     MODER_15,    Mode                 )\
+X(mode0,                 MODER,     MODER_0,     Mode                 )\
+X(mode1,                 MODER,     MODER_1,     Mode                 )\
+X(mode2,                 MODER,     MODER_2,     Mode                 )\
+X(mode3,                 MODER,     MODER_3,     Mode                 )\
+X(mode4,                 MODER,     MODER_4,     Mode                 )\
+X(mode5,                 MODER,     MODER_5,     Mode                 )\
+X(mode6,                 MODER,     MODER_6,     Mode                 )\
+X(mode7,                 MODER,     MODER_7,     Mode                 )\
+X(mode8,                 MODER,     MODER_8,     Mode                 )\
+X(mode9,                 MODER,     MODER_9,     Mode                 )\
+X(mode10,                MODER,     MODER_10,    Mode                 )\
+X(mode11,                MODER,     MODER_11,    Mode                 )\
+X(mode12,                MODER,     MODER_12,    Mode                 )\
+X(mode13,                MODER,     MODER_13,    Mode                 )\
+X(mode14,                MODER,     MODER_14,    Mode                 )\
+X(mode15,                MODER,     MODER_15,    Mode                 )\
 \
 /************************ GPIOx OTYPER REGISTER ***********************/\
 X(output_type0,           OTYPER,    OT_0,        OutputType           )\
@@ -165,7 +165,11 @@ X(alternate_function14,   AFRH,      AFRH_14,     AlternateFunction    )\
 X(alternate_function15,   AFRH,      AFRH_15,     AlternateFunction    )
 
 #define GPIOx_LOCK_REGISTER(X) X(lock, LCKR)
-    
+
+#define GPIOx_BULK_SET(X) X(bulk_set, BSRR)
+
+#define GPIOx_TOGGLE(X) X(toggle, BSRR)
+
 #define GENERATE_SET_FUNCTION(short_name, _reg, _sub_reg, _type)                   \
     /** @brief Sets the field short_name in GPIOx register. */                     \
     static inline void play32_gpiox_set_##short_name(                              \
@@ -200,11 +204,36 @@ X(alternate_function15,   AFRH,      AFRH_15,     AlternateFunction    )
         return ((gpiox->reg & (1UL << 16)) != 0UL);    \
     }
 
+
+#define GENERATE_BULK_SET_FUNCTION(short_name, reg)               \
+    /** @brief Atomically set and reset multiple GPIO pins. */    \
+    static inline void play32_gpiox_##short_name(                 \
+        PLAY32_GPIOx_TypeDef *gpiox,                              \
+        uint32_t enable,                                          \
+        uint32_t disable                                          \
+    ) {                                                           \
+        gpiox->reg = ((disable & 0xFFFFUL) << 16)                 \
+        | (enable & 0xFFFFUL);                                    \
+    }
+
+#define GENERATE_TOGGLE_FUNCTION(short_name, reg)          \
+    /** @brief Atomically toggle selected GPIO pins. */    \
+    static inline void play32_gpiox_##short_name(          \
+        PLAY32_GPIOx_TypeDef *gpiox,                       \
+        uint32_t pin_mask                                  \
+    ) {                                                    \
+        pin_mask &= 0x0000FFFFUL;                          \
+        uint32_t odr = gpiox->ODR;                         \
+        gpiox->reg = ((odr & pin_mask) << 16) | (~odr & pin_mask); \
+    }
+
 GPIOx_REGISTERS_TABLE(GENERATE_SET_FUNCTION);
 GPIOx_REGISTERS_TABLE(GENERATE_GET_FUNCTION);
 GPIOx_LOCK_REGISTER(GENERATE_LOCK_FUNCTION);
+GPIOx_TOGGLE(GENERATE_TOGGLE_FUNCTION)
 
 #undef GENERATE_SET_FUNCTION
 #undef GENERATE_GET_FUNCTION
 #undef GENERATE_LOCK_FUNCTION
+#undef GENERATE_TOGGLE_FUNCTION
 #endif //PLAY32_GPIOx_H

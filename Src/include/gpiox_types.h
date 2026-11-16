@@ -38,55 +38,55 @@
 #define PLAY32_GPIOH_BASE          (PLAY32_GPIOx_PERIPHERAL + (PLAY32_GPIOH_BASE_POS * PLAY32_GPIOx_SIZE)) //0x4002 1C00
 
 typedef struct {
-    volatile uint32_t MODER;
-    volatile uint32_t OTYPER;
-    volatile uint32_t OSPEEDR;
-    volatile uint32_t PUPDR;
-    volatile uint32_t IDR;
-    volatile uint32_t ODR;
-    volatile uint32_t BSRR;
-    volatile uint32_t LCKR;
-    volatile uint32_t AFRL;
-    volatile uint32_t AFRH;
+    volatile uint32_t MODER;        /*!< Offset: 0x00 - GPIO port mode register */
+    volatile uint32_t OTYPER;       /*!< Offset: 0x04 - GPIO port output type register */
+    volatile uint32_t OSPEEDR;      /*!< Offset: 0x08 - GPIO port output speed register */
+    volatile uint32_t PUPDR;        /*!< Offset: 0x0C - GPIO port pull-up/pull-down register */
+    volatile uint32_t IDR;          /*!< Offset: 0x10 - GPIO port input data register */
+    volatile uint32_t ODR;          /*!< Offset: 0x14 - GPIO port output data register */
+    volatile uint32_t BSRR;         /*!< Offset: 0x18 - GPIO port bit set/reset register */
+    volatile uint32_t LCKR;         /*!< Offset: 0x1C - GPIO port configuration lock register */
+    volatile uint32_t AFRL;         /*!< Offset: 0x20 - GPIO alternate function low register */
+    volatile uint32_t AFRH;         /*!< Offset: 0x24 - GPIO alternate function high register */
 } PLAY32_GPIOx_TypeDef;
 
 typedef enum {
-    PLAY32_PIN_0   = (1UL << 0),
-    PLAY32_PIN_1   = (1UL << 1),
-    PLAY32_PIN_2   = (1UL << 2),
-    PLAY32_PIN_3   = (1UL << 3),
-    PLAY32_PIN_4   = (1UL << 4),
-    PLAY32_PIN_5   = (1UL << 5),
-    PLAY32_PIN_6   = (1UL << 6),
-    PLAY32_PIN_7   = (1UL << 7),
-    PLAY32_PIN_8   = (1UL << 8),
-    PLAY32_PIN_9   = (1UL << 9),
-    PLAY32_PIN_10  = (1UL << 10),
-    PLAY32_PIN_11  = (1UL << 11),
-    PLAY32_PIN_12  = (1UL << 12),
-    PLAY32_PIN_13  = (1UL << 13),
-    PLAY32_PIN_14  = (1UL << 14),
-    PLAY32_PIN_15  = (1UL << 15),
-    PLAY32_PIN_ALL = 0xFFFFUL
+    PLAY32_GPIOx_PIN_0   = (1UL << 0),
+    PLAY32_GPIOx_PIN_1   = (1UL << 1),
+    PLAY32_GPIOx_PIN_2   = (1UL << 2),
+    PLAY32_GPIOx_PIN_3   = (1UL << 3),
+    PLAY32_GPIOx_PIN_4   = (1UL << 4),
+    PLAY32_GPIOx_PIN_5   = (1UL << 5),
+    PLAY32_GPIOx_PIN_6   = (1UL << 6),
+    PLAY32_GPIOx_PIN_7   = (1UL << 7),
+    PLAY32_GPIOx_PIN_8   = (1UL << 8),
+    PLAY32_GPIOx_PIN_9   = (1UL << 9),
+    PLAY32_GPIOx_PIN_10  = (1UL << 10),
+    PLAY32_GPIOx_PIN_11  = (1UL << 11),
+    PLAY32_GPIOx_PIN_12  = (1UL << 12),
+    PLAY32_GPIOx_PIN_13  = (1UL << 13),
+    PLAY32_GPIOx_PIN_14  = (1UL << 14),
+    PLAY32_GPIOx_PIN_15  = (1UL << 15),
+    PLAY32_GPIOx_PIN_ALL = 0xFFFFUL
 } PLAY32_GPIOx_PinList;
 
 typedef enum {
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_0  = 0,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_1  = 1,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_2  = 2,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_3  = 3,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_4  = 4,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_5  = 5,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_6  = 6,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_7  = 7,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_8  = 8,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_9  = 9,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_10 = 10,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_11 = 11,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_12 = 12,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_13 = 13,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_14 = 14,
-    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_15 = 15
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_0  = 0U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_1  = 1U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_2  = 2U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_3  = 3U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_4  = 4U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_5  = 5U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_6  = 6U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_7  = 7U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_8  = 8U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_9  = 9U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_10 = 10U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_11 = 11U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_12 = 12U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_13 = 13U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_14 = 14U,
+    PLAY32_GPIOx_ALTERNATE_FUNCTION_AF_15 = 15U
 } PLAY32_GPIOx_AlternateFunction;
 
 #define PLAY32_GPIOA ((PLAY32_GPIOx_TypeDef *)PLAY32_GPIOA_BASE)
@@ -98,7 +98,7 @@ typedef enum {
 
 #pragma region TIMx_COMMON_ENUM
 typedef enum {
-    PLAY32_GPIOx_LEVEL_LOW   = 0,
+    PLAY32_GPIOx_LEVEL_LOW   = 0U,
     PLAY32_GPIOx_LEVEL_HIGH  = 1
 } PLAY32_GPIOx_LEVEL;
 #pragma endregion
@@ -142,10 +142,10 @@ typedef enum {
 #pragma endregion
 #pragma region GPIOx_MODER_REGISTER_ENUM
 typedef enum {
-    PLAY32_GPIOx_MODER_MODE_INPUT       = 0,
-    PLAY32_GPIOx_MODER_MODE_OUTPUT      = 1,
-    PLAY32_GPIOx_MODER_MODE_ALTERNATIVE = 2,
-    PLAY32_GPIOx_MODER_MODE_ANALOG      = 3
+    PLAY32_GPIOx_MODER_MODE_INPUT       = 0U,
+    PLAY32_GPIOx_MODER_MODE_OUTPUT      = 1U,
+    PLAY32_GPIOx_MODER_MODE_ALTERNATIVE = 2U,
+    PLAY32_GPIOx_MODER_MODE_ANALOG      = 3U
 } PLAY32_GPIOx_MODER_Mode;
 #pragma endregion
 #pragma endregion
@@ -189,8 +189,8 @@ typedef enum {
 #pragma endregion
 #pragma region GPIOx_OTYPER_REGISTER_ENUM
 typedef enum {
-    PLAY32_GPIOx_OTYPER_TYPE_PUSH_PULL   = 0,
-    PLAY32_GPIOx_OTYPER_TYPE_OPEN_DRAIN  = 1
+    PLAY32_GPIOx_OTYPER_TYPE_PUSH_PULL   = 0U,
+    PLAY32_GPIOx_OTYPER_TYPE_OPEN_DRAIN  = 1U
 } PLAY32_GPIOx_OTYPER_OutputType;
 #pragma endregion
 #pragma endregion
@@ -234,9 +234,9 @@ typedef enum {
 #pragma endregion
 #pragma region GPIOx_PUPDR_REGISTER_ENUM
 typedef enum {
-    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_NO_PULL_UP_PULL_DOWN = 0,
-    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_PULL_UP              = 1,
-    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_PULL_DOWN            = 2
+    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_NO_PULL_UP_PULL_DOWN = 0U,
+    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_PULL_UP              = 1U,
+    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_PULL_DOWN            = 2U
 } PLAY32_GPIOx_PUPDR_PullUpPullDown;
 #pragma endregion
 #pragma endregion
