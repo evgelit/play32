@@ -57,7 +57,7 @@ X(direct_memory_access_1_enable,     AHB1ENR,    DMA1EN,     DirectMemoryAccess1
 X(direct_memory_access_2_enable,     AHB1ENR,    DMA2EN,     DirectMemoryAccess1Enable      )\
 \
 /************************************* RCC AHB2ENR REGISTER *******************************/\
-X(usb_one_the_go_full_speed_enable,    AHB2ENR,    OTGFS,    USBOneTheGoFullSpeedEnable    )\
+X(usb_one_the_go_full_speed_enable,    AHB2ENR,    OTGFSEN,    USBOneTheGoFullSpeedEnable    )\
 \
 /*************************** RCC APB1ENR REGISTER ****************************/\
 X(timer_2_enable,            APB1ENR,    TIM2EN,      Timer2Enable            )\
@@ -73,28 +73,114 @@ X(i2c_2_enable,              APB1ENR,    I2C2EN,      I2C2Enable              )\
 X(i2c_3_enable,              APB1ENR,    I2C3EN,      I2C3Enable              )\
 X(power_enable,              APB1ENR,    PWREN,       PowerEnable             )\
 \
-/*************************************** RCC APB2ENR REGISTER ***************************************/\
+/*********************** RCC APB2ENR REGISTER ***************************************/\
+X(timer_1_enable,            APB2ENR, TIM1EN,Timer1Enable)\
+X(usart_1_enable,            APB2ENR, USART1EN,USART1Enable)\
+X(usart_6_enable,            APB2ENR, USART6EN, USART6Enable)\
+X(analog_digital_converter_1_enable, APB2ENR, ADC1EN, AnalogDigitalConverter1Enable)\
+X(secure_digital_input_output_enable, APB2ENR, SDIOEN, SecureDigitalInputOutputEnable)\
+X(spi_1_enable,                         APB2ENR, SPI1EN, SPI1Enable)\
+X(spi_4_enable,                     APB2ENR, SPI4EN, SPI4Enable)\
+X(system_config_enable,          APB2ENR, SYSCFGEN, SystemConfigEnable)\
+X(timer_9_enable,       APB2ENR, TIM9EN, Timer9Enable)\
+X(timer_10_enable,           APB2ENR, TIM10EN,Timer10Enable)\
+X(timer_11_enable,              APB2ENR, TIM11EN,Timer11Enable)\
+\
+/*********************************** RCC AHB1LPENR REGISTER **********************************/\
+X(gpio_a_low_power_enable,                     AHB1LPENR,    GPIOALPEN,    GPIOALowPowerEnable                    )\
+X(gpio_b_low_power_enable,                     AHB1LPENR,    GPIOBLPEN,    GPIOBLowPowerEnable                    )\
+X(gpio_c_low_power_enable,                     AHB1LPENR,    GPIOCLPEN,    GPIOCLowPowerEnable                    )\
+X(gpio_d_low_power_enable,                     AHB1LPENR,    GPIODLPEN,    GPIODLowPowerEnable                    )\
+X(gpio_e_low_power_enable,                     AHB1LPENR,    GPIOELPEN,    GPIOELowPowerEnable                    )\
+X(gpio_h_low_power_enable,                     AHB1LPENR,    GPIOHLPEN,    GPIOHLowPowerEnable                    )\
+X(cyclic_redundancy_check_low_power_enable,    AHB1LPENR,    CRCLPEN,      CyclicRedundancyCheckLowPowerEnable    )\
+X(direct_memory_access_1_low_power_enable,     AHB1LPENR,    DMA1LPEN,     DirectMemoryAccess1LowPowerEnable      )\
+X(direct_memory_access_2_low_power_enable,     AHB1LPENR,    DMA2LPEN,     DirectMemoryAccess1LowPowerEnable      )\
+\
+/************************************* RCC AHB2LPENR REGISTER *******************************/\
+X(usb_one_the_go_full_speed_low_power_enable,    AHB2LPENR,    OTGFSLPEN,    USBOneTheGoFullSpeedLowPowerEnable    )\
+\
+/*************************** RCC APB1LPENR REGISTER ****************************/\
+X(timer_2_low_power_enable,            APB1LPENR,    TIM2LPEN,      Timer2LowPowerEnable            )\
+X(timer_3_low_power_enable,            APB1LPENR,    TIM3LPEN,      Timer3LowPowerEnable            )\
+X(timer_4_low_power_enable,            APB1LPENR,    TIM4LPEN,      Timer4LowPowerEnable            )\
+X(timer_5_low_power_enable,            APB1LPENR,    TIM5LPEN,      Timer5LowPowerEnable            )\
+X(window_watchdog_low_power_enable,    APB1LPENR,    WWDGLPEN,      WindowWatchdogLowPowerEnable    )\
+X(spi_2_low_power_enable,              APB1LPENR,    SPI2LPEN,      SPI2LowPowerEnable              )\
+X(spi_3_low_power_enable,              APB1LPENR,    SPI3LPEN,      SPI3LowPowerEnable              )\
+X(usart_2_low_power_enable,            APB1LPENR,    USART2LPEN,    USART2LowPowerEnable            )\
+X(i2c_1_low_power_enable,              APB1LPENR,    I2C1LPEN,      I2C1LowPowerEnable              )\
+X(i2c_2_low_power_enable,              APB1LPENR,    I2C2LPEN,      I2C2LowPowerEnable              )\
+X(i2c_3_low_power_enable,              APB1LPENR,    I2C3LPEN,      I2C3LowPowerEnable              )\
+X(power_low_power_enable,              APB1LPENR,    PWRLPEN,       PowerLowPowerEnable             )\
+\
+/*********************** RCC APB2LPENR REGISTER ***************************************/\
+X(timer_1_low_power_enable,                        APB2LPENR,    TIM1LPEN,      Timer1LowPowerEnable)\
+X(usart_1_low_power_enable,                        APB2LPENR,    USART1LPEN,    USART1LowPowerEnable)\
+X(usart_6_low_power_enable,                        APB2LPENR,    USART6LPEN,    USART6LowPowerEnable)\
+X(analog_digital_converter_1_low_power_enable,     APB2LPENR,    ADC1LPEN,      AnalogDigitalConverter1LowPowerEnable)\
+X(secure_digital_input_output_low_power_enable,    APB2LPENR,    SDIOLPEN,      SecureDigitalInputOutputLowPowerEnable)\
+X(spi_1_low_power_enable,                          APB2LPENR,    SPI1LPEN,      SPI1LowPowerEnable)\
+X(spi_4_low_power_enable,                          APB2LPENR,    SPI4LPEN,      SPI4LowPowerEnable)\
+X(system_config_low_power_enable,                  APB2LPENR,    SYSCFGLPEN,    SystemConfigLowPowerEnable)\
+X(timer_9_low_power_enable,                        APB2LPENR,    TIM9LPEN,      Timer9LowPowerEnable)\
+X(timer_10_low_power_enable,                       APB2LPENR,    TIM10LPEN,     Timer10LowPowerEnable)\
+X(timer_11_low_power_enable,                       APB2LPENR,    TIM11LPEN,     Timer11LowPowerEnable)\
+\
+/*********************** RCC BDCR REGISTER ***************************************/\
+X(external_low_speed_oscillator_enable, BDCR, LSEON, ExternalLowSpeedOscillatorEnable)\
+X(external_low_speed_oscillator_ready, BDCR, LSERDY, ExternalLowSpeedOscillatorReady)\
+X(external_low_speed_oscillator_bypass, BDCR, LSEBYP, ExternalLowSpeedOscillatorBypass)\
+X(real_time_clock_source_selection, BDCR, RTCSEL, RealTimeClockSourceSelection)\
+X(real_time_clock_enable, BDCR, RTCEN, RealTimeClockEnable)\
+X(backup_domain_software_reset, BDCR, BDRST, BackupDomainSoftwareReset)\
+\
+/*********************** RCC CSR REGISTER ***************************************/\
+X(internal_low_speed_oscillator_enable, CSR, LSION, InternalLowSpeedOscillatorEnable)\
+X(internal_low_speed_oscillator_ready, CSR, LSIRDY, InternalLowSpeedOscillatorEnable)\
+X(remove_reset_flag, CSR, RMVF, RemoveResetFlag)\
+X(bor_reset_flag, CSR, BORRSTF , BORResetFlag)\
+X(pin_reset_flag, CSR, PINRSTF, PINResetFlag)\
+X(por_pdr_resetflag, CSR, PORRSTF, PORPDRResetFlag)\
+X(software_reset_flag, CSR, SFTRSTF, SoftwareResetFlag)\
+X(independent_watchdog_reset_flag, CSR, IWDGRSTF, IndependentWatchdogResetFlag)\
+X(window_watchdog_reset_flag, CSR, WWDGRSTF, WindowWatchdogResetFlag)\
+X(low_power_reset_flag, CSR, LPWRRSTF, LowPowerResetFlag)\
+\
+/*********************** RCC SSCGR REGISTER ***************************************/\
+X(ModulationPeriod, SSCGR, MODPER, ModulationPeriod)\
+X(IncrementationStep, SSCGR, INCSTEP, IncrementationStep)\
+X(SpreadSelect, SSCGR, SPREADSEL, SpreadSelect)\
+X(SpreadSpectrumModulationEnable, SSCGR, SSCGEN, SpreadSpectrumModulationEnable)\
+\
+/*********************** RCC PLLI2SCFGR REGISTER ***************************************/\
+X(phase_locked_loop_i2s_multiplication, PLLI2SCFGR, PLLI2SN, PhaseLockedLoopI2SMultiplication)\
+X(phase_locked_loop_i2s_division, PLLI2SCFGR, PLLI2SR, PhaseLockedLoopI2SDivision)\
+\
+/*********************** RCC DCKCFGR REGISTER ***************************************/\
+X(Timers_Prescalers_Selection, DCKCFGR, TIMPRE,  TimersPrescalersSelection)\
 
-#define GENERATE_SET_FUNCTION(short_name, _reg, _sub_reg, _type)                \
-    /** @brief Sets the field short_name in RCC register. */                   \
-    static inline void play32_rcc_set_##short_name(  \
-        const PLAY32_RCC_##_reg##_##_type value                                \
-    ) {                                                                         \
+#define GENERATE_SET_FUNCTION(short_name, _reg, _sub_reg, _type)                           \
+    /** @brief Sets the field short_name in RCC register. */                               \
+    static inline void play32_rcc_set_##short_name(                                        \
+        const PLAY32_RCC_##_reg##_##_type value                                            \
+    ) {                                                                                    \
         PLAY32_RCC->_reg = (PLAY32_RCC->_reg & ~(PLAY32_RCC_##_reg##_##_sub_reg##_MSK))    \
-            | (((uint32_t)value << (PLAY32_RCC_##_reg##_##_sub_reg##_POS))     \
-            & (PLAY32_RCC_##_reg##_##_sub_reg##_MSK));                         \
+            | (((uint32_t)value << (PLAY32_RCC_##_reg##_##_sub_reg##_POS))                 \
+            & (PLAY32_RCC_##_reg##_##_sub_reg##_MSK));                                     \
     }
 
-#define GENERATE_GET_FUNCTION(short_name, _reg, _sub_reg, _type)                \
-    /** @brief Sets the field short_name in RCC register. */                   \
-    static inline PLAY32_RCC_##_reg##_##_type play32_rcc_get_##short_name() {                                                                         \
-        return (PLAY32_RCC_##_reg##_##_type)                                  \
-            ((PLAY32_RCC->_reg & (PLAY32_RCC_##_reg##_##_sub_reg##_MSK))             \
-            >> (PLAY32_RCC_##_reg##_##_sub_reg##_POS));                        \
+#define GENERATE_GET_FUNCTION(short_name, _reg, _sub_reg, _type)                 \
+    /** @brief Sets the field short_name in RCC register. */                     \
+    static inline PLAY32_RCC_##_reg##_##_type play32_rcc_get_##short_name() {    \
+        return (PLAY32_RCC_##_reg##_##_type)                                     \
+            ((PLAY32_RCC->_reg & (PLAY32_RCC_##_reg##_##_sub_reg##_MSK))         \
+            >> (PLAY32_RCC_##_reg##_##_sub_reg##_POS));                          \
     }
 
 RCC_REGISTERS_TABLE(GENERATE_SET_FUNCTION);
 RCC_REGISTERS_TABLE(GENERATE_GET_FUNCTION);
+
 
 #undef GENERATE_SET_FUNCTION
 #undef GENERATE_GET_FUNCTION
