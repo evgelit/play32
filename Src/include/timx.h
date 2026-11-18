@@ -45,66 +45,66 @@
  * @see    PLAY32_TIMx_TypeDef
  */
 #define TIMx_REGISTERS_TABLE(X) \
-/*************************************** TIMx CR1 REGISTER ************************************************/\
-X(clock_division,                        CR1,     CKD,         ClockDivision,                      SET_RMW )\
-X(auto_reload_preload_enable,            CR1,     ARPE,        AutoReloadPreloadEnable,            SET_RMW )\
-X(center_aligned_mode,                   CR1,     CMS,         CenterAlignedModeSelection,         SET_RMW )\
-X(direction,                             CR1,     DIR,         Direction,                          SET_RMW )\
-X(one_pulse_mode,                        CR1,     OPM,         OnePulseMode,                       SET_RMW )\
-X(update_request_source,                 CR1,     URS,         UpdateRequestSource,                SET_RMW )\
-X(update_disable,                        CR1,     UDIS,        UpdateDisable,                      SET_RMW )\
-X(counter_enable,                        CR1,     CEN,         CounterEnable,                      SET_RMW )\
+/*************************************** TIMx CR1 REGISTER ****************************************************/\
+X(clock_division,                        CR1,     CKD,         ClockDivision,                          SET_RMW )\
+X(auto_reload_preload_enable,            CR1,     ARPE,        AutoReloadPreloadEnable,                SET_RMW )\
+X(center_aligned_mode,                   CR1,     CMS,         CenterAlignedModeSelection,             SET_RMW )\
+X(direction,                             CR1,     DIR,         Direction,                              SET_RMW )\
+X(one_pulse_mode,                        CR1,     OPM,         OnePulseMode,                           SET_RMW )\
+X(update_request_source,                 CR1,     URS,         UpdateRequestSource,                    SET_RMW )\
+X(update_disable,                        CR1,     UDIS,        UpdateDisable,                          SET_RMW )\
+X(counter_enable,                        CR1,     CEN,         CounterEnable,                          SET_RMW )\
 \
-/*************************************** TIMx CR2 REGISTER ************************************************/\
-X(t1_selection,                          CR2,     TI1S,        T1Selection,                        SET_RMW )\
-X(master_mode_selection,                 CR2,     MMS,         MasterModeSelection,                SET_RMW )\
-X(capture_compare_dma_selection,         CR2,     CCDS,        CaptureCompareDMASelection,         SET_RMW )\
+/*************************************** TIMx CR2 REGISTER ****************************************************/\
+X(t1_selection,                          CR2,     TI1S,        T1Selection,                            SET_RMW )\
+X(master_mode_selection,                 CR2,     MMS,         MasterModeSelection,                    SET_RMW )\
+X(capture_compare_dma_selection,         CR2,     CCDS,        CaptureCompareDMASelection,             SET_RMW )\
 \
-/*************************************** TIMx SMCR REGISTER ***********************************************/\
-X(slave_mode_selection,                  SMCR,    SMS,         SlaveModeSelection,                 SET_RMW )\
-X(trigger_selection,                     SMCR,    TS,          TriggerSelection,                   SET_RMW )\
-X(master_slave_mode,                     SMCR,    MSM,         MasterSlaveMode,                    SET_RMW )\
-X(ext_trigger_filter,                    SMCR,    ETF,         ExtTriggerFilter,                   SET_RMW )\
-X(ext_trigger_prescaler_selection,       SMCR,    ETPS,        ExtTriggerPrescalerSelection,       SET_RMW )\
-X(ext_clock_enable,                      SMCR,    ECE,         ExtClockEnable,                     SET_RMW )\
-X(ext_trigger_polarity,                  SMCR,    ETP,         ExtTriggerPolarity,                 SET_RMW )\
+/*************************************** TIMx SMCR REGISTER ***************************************************/\
+X(slave_mode_selection,                  SMCR,    SMS,         SlaveModeSelection,                     SET_RMW )\
+X(trigger_selection,                     SMCR,    TS,          TriggerSelection,                       SET_RMW )\
+X(master_slave_mode,                     SMCR,    MSM,         MasterSlaveMode,                        SET_RMW )\
+X(ext_trigger_filter,                    SMCR,    ETF,         ExtTriggerFilter,                       SET_RMW )\
+X(ext_trigger_prescaler_selection,       SMCR,    ETPS,        ExtTriggerPrescalerSelection,           SET_RMW )\
+X(ext_clock_enable,                      SMCR,    ECE,         ExtClockEnable,                         SET_RMW )\
+X(ext_trigger_polarity,                  SMCR,    ETP,         ExtTriggerPolarity,                     SET_RMW )\
 \
-/*************************************** TIMx DIER REGISTER ***********************************************/\
-X(update_interrupt_enable,               DIER,    UIE,         UpdateInterruptEnable,              SET_RMW )\
-X(capture_compare_1_interrupt_enable,    DIER,    CC1IE,       CaptureCompare1InterruptEnable,     SET_RMW )\
-X(capture_compare_2_interrupt_enable,    DIER,    CC2IE,       CaptureCompare2InterruptEnable,     SET_RMW )\
-X(capture_compare_3_interrupt_enable,    DIER,    CC3IE,       CaptureCompare3InterruptEnable,     SET_RMW )\
-X(capture_compare_4_interrupt_enable,    DIER,    CC4IE,       CaptureCompare4InterruptEnable,     SET_RMW )\
-X(trigger_interrupt_enable,              DIER,    TIE,         TriggerInterruptEnable,             SET_RMW )\
-X(update_dma_enable,                     DIER,    UDE,         UpdateDMAEnable,                    SET_RMW )\
-X(capture_compare_1_dma_enable,          DIER,    CC1DE,       CaptureCompare1DMAEnable,           SET_RMW )\
-X(capture_compare_2_dma_enable,          DIER,    CC2DE,       CaptureCompare2DMAEnable,           SET_RMW )\
-X(capture_compare_3_dma_enable,          DIER,    CC3DE,       CaptureCompare3DMAEnable,           SET_RMW )\
-X(capture_compare_4_dma_enable,          DIER,    CC4DE,       CaptureCompare4DMAEnable,           SET_RMW )\
-X(trigger_dma_enable,                    DIER,    TDE,         TriggerDMAEnable,                   SET_RMW )\
+/*************************************** TIMx DIER REGISTER ***************************************************/\
+X(update_interrupt_enable,               DIER,    UIE,         UpdateInterruptEnable,                  SET_RMW )\
+X(capture_compare_1_interrupt_enable,    DIER,    CC1IE,       CaptureCompare1InterruptEnable,         SET_RMW )\
+X(capture_compare_2_interrupt_enable,    DIER,    CC2IE,       CaptureCompare2InterruptEnable,         SET_RMW )\
+X(capture_compare_3_interrupt_enable,    DIER,    CC3IE,       CaptureCompare3InterruptEnable,         SET_RMW )\
+X(capture_compare_4_interrupt_enable,    DIER,    CC4IE,       CaptureCompare4InterruptEnable,         SET_RMW )\
+X(trigger_interrupt_enable,              DIER,    TIE,         TriggerInterruptEnable,                 SET_RMW )\
+X(update_dma_enable,                     DIER,    UDE,         UpdateDMAEnable,                        SET_RMW )\
+X(capture_compare_1_dma_enable,          DIER,    CC1DE,       CaptureCompare1DMAEnable,               SET_RMW )\
+X(capture_compare_2_dma_enable,          DIER,    CC2DE,       CaptureCompare2DMAEnable,               SET_RMW )\
+X(capture_compare_3_dma_enable,          DIER,    CC3DE,       CaptureCompare3DMAEnable,               SET_RMW )\
+X(capture_compare_4_dma_enable,          DIER,    CC4DE,       CaptureCompare4DMAEnable,               SET_RMW )\
+X(trigger_dma_enable,                    DIER,    TDE,         TriggerDMAEnable,                       SET_RMW )\
 \
-/*************************************** TIMx EGR REGISTER ************************************************/\
-X(update_generation,                     EGR,     UG,          UpdateGeneration,                   SET_WO  )\
-X(capture_compare_1_generation,          EGR,     CC1G,        CaptureCompare1Generation,          SET_WO  )\
-X(capture_compare_2_generation,          EGR,     CC2G,        CaptureCompare2Generation,          SET_WO  )\
-X(capture_compare_3_generation,          EGR,     CC3G,        CaptureCompare3Generation,          SET_WO  )\
-X(capture_compare_4_generation,          EGR,     CC4G,        CaptureCompare4Generation,          SET_WO  )\
-X(trigger_generation,                    EGR,     TG,          TriggerGeneration,                  SET_WO  )\
-/*************************************** TIMx CCMR1 REGISTER **********************************************/\
-X(capture_compare_1_selection,           CCMR1,   CC1S,        CaptureCompare1Selection,           SET_RMW )\
-X(output_compare_1_fast_enable,          CCMR1,   OC1FE,       OutputCompare1FastEnable,           SET_RMW )\
-X(output_compare_1_preload_enable,       CCMR1,   OC1PE,       OutputCompare1PreloadEnable,        SET_RMW )\
-X(output_compare_1_mode,                 CCMR1,   OC1M,        OutputCompare1Mode,                 SET_RMW )\
-X(output_compare_1_clear_enable,         CCMR1,   OC1CE,       OutputCompare1ClearEnable,          SET_RMW )\
-X(capture_compare_2_selection,           CCMR1,   CC2S,        CaptureCompare2Selection,           SET_RMW )\
-X(output_compare_2_fast_enable,          CCMR1,   OC2FE,       OutputCompare2FastEnable,           SET_RMW )\
-X(output_compare_2_preload_enable,       CCMR1,   OC2PE,       OutputCompare2PreloadEnable,        SET_RMW )\
-X(output_compare_2_mode,                 CCMR1,   OC2M,        OutputCompare2Mode,                 SET_RMW )\
-X(output_compare_2_clear_enable,         CCMR1,   OC2CE,       OutputCompare2ClearEnable,          SET_RMW )\
-X(input_capture_1_prescaler,             CCMR1,   IC1PSC,      InputCapture1Prescaler,             SET_RMW )\
-X(input_capture_1_filter,                CCMR1,   IC1F,        InputCapture1Filter,                SET_RMW )\
-X(input_capture_2_prescaler,             CCMR1,   IC2PSC,      InputCapture2Prescaler,             SET_RMW )\
-X(input_capture_2_filter,                CCMR1,   IC2F,        InputCapture2Filter,                SET_RMW )\
+/*************************************** TIMx EGR REGISTER ****************************************************/\
+X(update_generation,                     EGR,     UG,          UpdateGeneration,                       SET_WO  )\
+X(capture_compare_1_generation,          EGR,     CC1G,        CaptureCompare1Generation,              SET_WO  )\
+X(capture_compare_2_generation,          EGR,     CC2G,        CaptureCompare2Generation,              SET_WO  )\
+X(capture_compare_3_generation,          EGR,     CC3G,        CaptureCompare3Generation,              SET_WO  )\
+X(capture_compare_4_generation,          EGR,     CC4G,        CaptureCompare4Generation,              SET_WO  )\
+X(trigger_generation,                    EGR,     TG,          TriggerGeneration,                      SET_WO  )\
+/*************************************** TIMx CCMR1 REGISTER **************************************************/\
+X(capture_compare_1_selection,           CCMR1,   CC1S,        CaptureCompare1Selection,               SET_RMW )\
+X(output_compare_1_fast_enable,          CCMR1,   OC1FE,       OutputCompare1FastEnable,               SET_RMW )\
+X(output_compare_1_preload_enable,       CCMR1,   OC1PE,       OutputCompare1PreloadEnable,            SET_RMW )\
+X(output_compare_1_mode,                 CCMR1,   OC1M,        OutputCompare1Mode,                     SET_RMW )\
+X(output_compare_1_clear_enable,         CCMR1,   OC1CE,       OutputCompare1ClearEnable,              SET_RMW )\
+X(capture_compare_2_selection,           CCMR1,   CC2S,        CaptureCompare2Selection,               SET_RMW )\
+X(output_compare_2_fast_enable,          CCMR1,   OC2FE,       OutputCompare2FastEnable,               SET_RMW )\
+X(output_compare_2_preload_enable,       CCMR1,   OC2PE,       OutputCompare2PreloadEnable,            SET_RMW )\
+X(output_compare_2_mode,                 CCMR1,   OC2M,        OutputCompare2Mode,                     SET_RMW )\
+X(output_compare_2_clear_enable,         CCMR1,   OC2CE,       OutputCompare2ClearEnable,              SET_RMW )\
+X(input_capture_1_prescaler,             CCMR1,   IC1PSC,      InputCapture1Prescaler,                 SET_RMW )\
+X(input_capture_1_filter,                CCMR1,   IC1F,        InputCapture1Filter,                    SET_RMW )\
+X(input_capture_2_prescaler,             CCMR1,   IC2PSC,      InputCapture2Prescaler,                 SET_RMW )\
+X(input_capture_2_filter,                CCMR1,   IC2F,        InputCapture2Filter,                    SET_RMW )\
 \
 /*************************************** TIMx CCMR2 REGISTER **************************************************/\
 X(capture_compare_3_selection,           CCMR2,   CC3S,        CaptureCompare3Selection,           SET_RMW     )\

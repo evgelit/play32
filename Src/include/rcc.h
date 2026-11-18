@@ -44,7 +44,7 @@
  * @see    PLAY32_RCC
  */
 #define RCC_REGISTERS_TABLE(X) \
-/************************************************* RCC CR REGISTER ***************************************************/\
+/************************************************* RCC CR REGISTER ************************************************************/\
 X(high_speed_internal_clock_enable,                CR,           HSION,         HighSpeedInternalClockEnable,          SET_RMW )\
 X(high_speed_internal_clock_ready,                 CR,           HSIRDY,        HighSpeedInternalClockReady,           RO      )\
 X(high_speed_internal_clock_trim,                  CR,           HSITRIM,       HighSpeedInternalClockTrim,            SET_RMW )\
@@ -58,14 +58,14 @@ X(phase_locked_loop_ready,                         CR,           PLLRDY,        
 X(phase_locked_loop_i2s_enable,                    CR,           PLLI2SON,      PhaseLockedLoopI2SEnable,              SET_RMW )\
 X(phase_locked_loop_i2s_ready,                     CR,           PLLI2SRDY,     PhaseLockedLoopI2SReady,               RO      )\
 \
-/************************************************* RCC PLLCFGR REGISTER **********************************************/\
+/************************************************* RCC PLLCFGR REGISTER *******************************************************/\
 X(phase_locked_loop_main_divider,                  PLLCFGR,      PLLM,          PhaseLockedLoopMainDivider,            SET_RMW )\
 X(phase_locked_loop_number_multiplicator,          PLLCFGR,      PLLN,          PhaseLockedLoopNumberMultiplicator,    SET_RMW )\
 X(phase_locked_loop_main_system_divider,           PLLCFGR,      PLLP,          PhaseLockedLoopMainSystemDivider,      SET_RMW )\
 X(phase_locked_loop_clock_source,                  PLLCFGR,      PLLSRC,        PhaseLockedLoopClockSource,            SET_RMW )\
 X(phase_locked_loop_main_q_divider,                PLLCFGR,      PLLQ,          PhaseLockedLoopMainQDivider,           SET_RMW )\
 \
-/************************************************* RCC CFGR REGISTER *************************************************/\
+/************************************************* RCC CFGR REGISTER **********************************************************/\
 X(system_clock_switch,                             CFGR,         SW,            SystemClockSwitch,                     SET_RMW )\
 X(system_clock_switch_status,                      CFGR,         SWS,           SystemClockSwitchStatus,               RO      )\
 X(ahb_prescaler,                                   CFGR,         HPRE,          AHBPrescaler,                          SET_RMW )\
@@ -78,7 +78,7 @@ X(mco1_prescaler,                                  CFGR,         MCO1PRE,       
 X(mco2_prescaler,                                  CFGR,         MCO2PRE,       MCO2Prescaler,                         SET_RMW )\
 X(mco2_source,                                     CFGR,         MCO2,          MCO2Source,                            SET_RMW )\
 \
-/************************************************* RCC CIR REGISTER **************************************************/\
+/************************************************* RCC CIR REGISTER ***********************************************************/\
 X(low_speed_internal_ready_interrupt_flag,         CIR,          LSIRDYF,       LowSpeedInternalReadyInterruptFlag,    RO      )\
 X(low_speed_external_ready_interrupt_flag,         CIR,          LSERDYF,       LowSpeedExternalReadyInterruptFlag,    RO      )\
 X(high_speed_internal_ready_interrupt_flag,        CIR,          HSIRDYF,       HighSpeedInternalReadyInterruptFlag,   RO      )\
@@ -100,7 +100,7 @@ X(phase_locked_loop_ready_interrupt_clear,         CIR,          PLLRDYC,       
 X(phase_locked_loop_i2s_ready_interrupt_clear,     CIR,          PLLI2SRDYC,    PhaseLockedLoopI2SReadyInterruptClear, SET_WO  )\
 X(clock_security_system_interrupt_clear,           CIR,          CSSC,          ClockSecuritySystemInterruptClear,     SET_WO  )\
 \
-/************************************************* RCC AHB1RSTR REGISTER *********************************************/\
+/************************************************* RCC AHB1RSTR REGISTER ******************************************************/\
 X(gpio_a_reset,                                    AHB1RSTR,     GPIOARST,      GPIOAReset,                            SET_RMW )\
 X(gpio_b_reset,                                    AHB1RSTR,     GPIOBRST,      GPIOBReset,                            SET_RMW )\
 X(gpio_c_reset,                                    AHB1RSTR,     GPIOCRST,      GPIOCReset,                            SET_RMW )\
@@ -111,10 +111,10 @@ X(crc_reset,                                       AHB1RSTR,     CRCRST,        
 X(dma_1_reset,                                     AHB1RSTR,     DMA1RST,       DMA1Reset,                             SET_RMW )\
 X(dma_2_reset,                                     AHB1RSTR,     DMA2RST,       DMA2Reset,                             SET_RMW )\
 \
-/************************************************* RCC AHB2RSTR REGISTER *********************************************/\
+/************************************************* RCC AHB2RSTR REGISTER ******************************************************/\
 X(usb_otg_fs_reset,                                AHB2RSTR,     OTGFSRST,      OTGFSReset,                            SET_RMW )\
 \
-/************************************************* RCC APB1RSTR REGISTER *********************************************/\
+/************************************************* RCC APB1RSTR REGISTER ******************************************************/\
 X(timer_2_reset,                                   APB1RSTR,     TIM2RST,       TIM2Reset,                             SET_RMW )\
 X(timer_3_reset,                                   APB1RSTR,     TIM3RST,       TIM3Reset,                             SET_RMW )\
 X(timer_4_reset,                                   APB1RSTR,     TIM4RST,       TIM4Reset,                             SET_RMW )\
@@ -128,7 +128,7 @@ X(i2c_2_reset,                                     APB1RSTR,     I2C2RST,       
 X(i2c_3_reset,                                     APB1RSTR,     I2C3RST,       I2C3Reset,                             SET_RMW )\
 X(power_reset,                                     APB1RSTR,     PWRRST,        PWRReset,                              SET_RMW )\
 \
-/************************************************* RCC APB2RSTR REGISTER *********************************************/\
+/************************************************* RCC APB2RSTR REGISTER ******************************************************/\
 X(timer_1_reset,                                   APB2RSTR,     TIM1RST,       TIM1Reset,                             SET_RMW )\
 X(usart_1_reset,                                   APB2RSTR,     USART1RST,     USART1Reset,                           SET_RMW )\
 X(usart_6_reset,                                   APB2RSTR,     USART6RST,     USART6Reset,                           SET_RMW )\
@@ -141,7 +141,7 @@ X(timer_9_reset,                                   APB2RSTR,     TIM9RST,       
 X(timer_10_reset,                                  APB2RSTR,     TIM10RST,      TIM10Reset,                            SET_RMW )\
 X(timer_11_reset,                                  APB2RSTR,     TIM11RST,      TIM11Reset,                            SET_RMW )\
 \
-/************************************************* RCC AHB1ENR REGISTER **********************************************/\
+/************************************************* RCC AHB1ENR REGISTER *******************************************************/\
 X(gpio_a_enable,                                   AHB1ENR,      GPIOAEN,       GPIOAEnable,                           SET_RMW )\
 X(gpio_b_enable,                                   AHB1ENR,      GPIOBEN,       GPIOBEnable,                           SET_RMW )\
 X(gpio_c_enable,                                   AHB1ENR,      GPIOCEN,       GPIOCEnable,                           SET_RMW )\
@@ -152,10 +152,10 @@ X(cyclic_redundancy_check_enable,                  AHB1ENR,      CRCEN,         
 X(direct_memory_access_1_enable,                   AHB1ENR,      DMA1EN,        DirectMemoryAccess1Enable,             SET_RMW )\
 X(direct_memory_access_2_enable,                   AHB1ENR,      DMA2EN,        DirectMemoryAccess2Enable,             SET_RMW )\
 \
-/************************************************* RCC AHB2ENR REGISTER **********************************************/\
+/************************************************* RCC AHB2ENR REGISTER *******************************************************/\
 X(usb_one_the_go_full_speed_enable,                AHB2ENR,      OTGFSEN,       USBOneTheGoFullSpeedEnable,            SET_RMW )\
 \
-/************************************************* RCC APB1ENR REGISTER **********************************************/\
+/************************************************* RCC APB1ENR REGISTER *******************************************************/\
 X(timer_2_enable,                                  APB1ENR,      TIM2EN,        Timer2Enable,                          SET_RMW )\
 X(timer_3_enable,                                  APB1ENR,      TIM3EN,        Timer3Enable,                          SET_RMW )\
 X(timer_4_enable,                                  APB1ENR,      TIM4EN,        Timer4Enable,                          SET_RMW )\
@@ -169,7 +169,7 @@ X(i2c_2_enable,                                    APB1ENR,      I2C2EN,        
 X(i2c_3_enable,                                    APB1ENR,      I2C3EN,        I2C3Enable,                            SET_RMW )\
 X(power_enable,                                    APB1ENR,      PWREN,         PowerEnable,                           SET_RMW )\
 \
-/************************************************* RCC APB2ENR REGISTER **********************************************/\
+/************************************************* RCC APB2ENR REGISTER *******************************************************/\
 X(timer_1_enable,                                  APB2ENR,      TIM1EN,        Timer1Enable,                          SET_RMW )\
 X(usart_1_enable,                                  APB2ENR,      USART1EN,      USART1Enable,                          SET_RMW )\
 X(usart_6_enable,                                  APB2ENR,      USART6EN,      USART6Enable,                          SET_RMW )\
@@ -182,7 +182,7 @@ X(timer_9_enable,                                  APB2ENR,      TIM9EN,        
 X(timer_10_enable,                                 APB2ENR,      TIM10EN,       Timer10Enable,                         SET_RMW )\
 X(timer_11_enable,                                 APB2ENR,      TIM11EN,       Timer11Enable,                         SET_RMW )\
 \
-/************************************************* RCC AHB1LPENR REGISTER ********************************************/\
+/************************************************* RCC AHB1LPENR REGISTER *****************************************************/\
 X(gpio_a_low_power_enable,                         AHB1LPENR,    GPIOALPEN,     GPIOALowPowerEnable,                   SET_RMW )\
 X(gpio_b_low_power_enable,                         AHB1LPENR,    GPIOBLPEN,     GPIOBLowPowerEnable,                   SET_RMW )\
 X(gpio_c_low_power_enable,                         AHB1LPENR,    GPIOCLPEN,     GPIOCLowPowerEnable,                   SET_RMW )\
@@ -193,10 +193,10 @@ X(cyclic_redundancy_check_low_power_enable,        AHB1LPENR,    CRCLPEN,       
 X(direct_memory_access_1_low_power_enable,         AHB1LPENR,    DMA1LPEN,      DirectMemoryAccess1LowPowerEnable,     SET_RMW )\
 X(direct_memory_access_2_low_power_enable,         AHB1LPENR,    DMA2LPEN,      DirectMemoryAccess2LowPowerEnable,     SET_RMW )\
 \
-/************************************************* RCC AHB2LPENR REGISTER ********************************************/\
+/************************************************* RCC AHB2LPENR REGISTER *****************************************************/\
 X(usb_one_the_go_full_speed_low_power_enable,      AHB2LPENR,    OTGFSLPEN,     USBOneTheGoFullSpeedLowPowerEnable,    SET_RMW )\
 \
-/************************************************* RCC APB1LPENR REGISTER ********************************************/\
+/************************************************* RCC APB1LPENR REGISTER *****************************************************/\
 X(timer_2_low_power_enable,                        APB1LPENR,    TIM2LPEN,      Timer2LowPowerEnable,                  SET_RMW )\
 X(timer_3_low_power_enable,                        APB1LPENR,    TIM3LPEN,      Timer3LowPowerEnable,                  SET_RMW )\
 X(timer_4_low_power_enable,                        APB1LPENR,    TIM4LPEN,      Timer4LowPowerEnable,                  SET_RMW )\
@@ -210,7 +210,7 @@ X(i2c_2_low_power_enable,                          APB1LPENR,    I2C2LPEN,      
 X(i2c_3_low_power_enable,                          APB1LPENR,    I2C3LPEN,      I2C3LowPowerEnable,                    SET_RMW )\
 X(power_low_power_enable,                          APB1LPENR,    PWRLPEN,       PowerLowPowerEnable,                   SET_RMW )\
 \
-/************************************************* RCC APB2LPENR REGISTER ********************************************/\
+/************************************************* RCC APB2LPENR REGISTER *****************************************************/\
 X(timer_1_low_power_enable,                        APB2LPENR,    TIM1LPEN,      Timer1LowPowerEnable,                  SET_RMW )\
 X(usart_1_low_power_enable,                        APB2LPENR,    USART1LPEN,    USART1LowPowerEnable,                  SET_RMW )\
 X(usart_6_low_power_enable,                        APB2LPENR,    USART6LPEN,    USART6LowPowerEnable,                  SET_RMW )\
@@ -223,7 +223,7 @@ X(timer_9_low_power_enable,                        APB2LPENR,    TIM9LPEN,      
 X(timer_10_low_power_enable,                       APB2LPENR,    TIM10LPEN,     Timer10LowPowerEnable,                 SET_RMW )\
 X(timer_11_low_power_enable,                       APB2LPENR,    TIM11LPEN,     Timer11LowPowerEnable,                 SET_RMW )\
 \
-/************************************************* RCC BDCR REGISTER *************************************************/\
+/************************************************* RCC BDCR REGISTER **********************************************************/\
 X(external_low_speed_oscillator_enable,            BDCR,         LSEON,         ExternalLowSpeedOscillatorEnable,      SET_RMW )\
 X(external_low_speed_oscillator_ready,             BDCR,         LSERDY,        ExternalLowSpeedOscillatorReady,       RO      )\
 X(external_low_speed_oscillator_bypass,            BDCR,         LSEBYP,        ExternalLowSpeedOscillatorBypass,      SET_RMW )\
@@ -231,7 +231,7 @@ X(real_time_clock_source_selection,                BDCR,         RTCSEL,        
 X(real_time_clock_enable,                          BDCR,         RTCEN,         RealTimeClockEnable,                   SET_RMW )\
 X(backup_domain_software_reset,                    BDCR,         BDRST,         BackupDomainSoftwareReset,             SET_RMW )\
 \
-/************************************************* RCC CSR REGISTER **************************************************/\
+/************************************************* RCC CSR REGISTER ***********************************************************/\
 X(internal_low_speed_oscillator_enable,            CSR,          LSION,         InternalLowSpeedOscillatorEnable,      SET_RMW )\
 X(internal_low_speed_oscillator_ready,             CSR,          LSIRDY,        InternalLowSpeedOscillatorReady,       RO      )\
 X(remove_reset_flag,                               CSR,          RMVF,          RemoveResetFlag,                       SET_RMW )\
@@ -243,17 +243,17 @@ X(independent_watchdog_reset_flag,                 CSR,          IWDGRSTF,      
 X(window_watchdog_reset_flag,                      CSR,          WWDGRSTF,      WindowWatchdogResetFlag,               RO      )\
 X(low_power_reset_flag,                            CSR,          LPWRRSTF,      LowPowerResetFlag,                     RO      )\
 \
-/************************************************* RCC SSCGR REGISTER ************************************************/\
+/************************************************* RCC SSCGR REGISTER *********************************************************/\
 X(modulation_period,                               SSCGR,        MODPER,        ModulationPeriod,                      SET_RMW )\
 X(incrementation_step,                             SSCGR,        INCSTEP,       IncrementationStep,                    SET_RMW )\
 X(spread_select,                                   SSCGR,        SPREADSEL,     SpreadSelect,                          SET_RMW )\
 X(spread_spectrum_modulation_enable,               SSCGR,        SSCGEN,        SpreadSpectrumModulationEnable,        SET_RMW )\
 \
-/************************************************* RCC PLLI2SCFGR REGISTER *******************************************/\
+/************************************************* RCC PLLI2SCFGR REGISTER ****************************************************/\
 X(phase_locked_loop_i2s_multiplication,            PLLI2SCFGR,   PLLI2SN,       PhaseLockedLoopI2SMultiplication,      SET_RMW )\
 X(phase_locked_loop_i2s_division,                  PLLI2SCFGR,   PLLI2SR,       PhaseLockedLoopI2SDivision,            SET_RMW )\
 \
-/************************************************* RCC DCKCFGR REGISTER **********************************************/\
+/************************************************* RCC DCKCFGR REGISTER *******************************************************/\
 X(timers_prescaler,                                DCKCFGR,      TIMPRE,        TimersPrescaler,                       SET_RMW )
 
 /*----------------------------------------------------------------------------
