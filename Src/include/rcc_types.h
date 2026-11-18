@@ -450,13 +450,6 @@ typedef uint8_t PLAY32_RCC_PLLCFGR_PhaseLockedLoopMainQDivider;
 /** @} */ /* End of PLAY32_RCC_PLLCFGR_Types */
 
 /**
- * @brief  RCC peripheral register map pointer (0x40023800).
- * @see    PLAY32_RCC_TypeDef
- * @see    PLAY32_RCC_BASE
- */
-#define PLAY32_RCC ((PLAY32_RCC_TypeDef *)PLAY32_RCC_BASE)
-
-/**
  * @defgroup PLAY32_RCC_CFGR_Types RCC Clock Configuration Register (RCC_CFGR)
  * @brief Bit positions, masks, and system clock / prescaler / MCO enumerations for RCC_CFGR (offset 0x08).
  * @{
