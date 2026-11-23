@@ -47,27 +47,33 @@ void init_example(void) {
 
 ## Development Status
 
-This project is actively under development. Reset & Clock Control (**RCC**), General-Purpose Timers (**TIM2–TIM5**), and General-Purpose I/O (**GPIO**) are **100% complete and fully operational**, along with full Doxygen API documentation and a hardware-verified blinky example. Work is currently ongoing to expand this architecture to the remaining periphery of the MCU.
+This project is actively under development. Reset & Clock Control (**RCC**), General-Purpose I/O (**GPIO**), General-Purpose Timers (**TIM2–TIM5**), and Universal Synchronous/Asynchronous Receiver-Transmitter (**USART1, USART2, USART6**) are **100% complete and fully operational**, along with full Doxygen API documentation and hardware-verified examples. Work is currently ongoing to expand this architecture to the remaining periphery of the MCU.
 
 - [x] **RCC (Reset and Clock Control): Fully Completed (100%)**
   - [x] Oscillator & PLL control and status (`CR`, `PLLCFGR`, `PLLI2SCFGR`, `SSCGR`)
   - [x] System clock routing, bus prescalers, and MCO outputs (`CFGR`, `DCKCFGR`)
   - [x] Clock interrupts & Backup domain / RTC clock control (`CIR`, `BDCR`, `CSR`)
   - [x] Peripheral resets, clock enables, and Sleep-mode gating (`AHB1RSTR`–`APB2RSTR`, `AHB1ENR`–`APB2ENR`, `AHB1LPENR`–`APB2LPENR`)
-- [x] **TIM2–TIM5 (General-Purpose Timers): Fully Completed (100%)**
-  - [x] Core structures, control logic, and atomic status flags (`CR1`, `CR2`, `SMCR`, `DIER`, `SR`, `EGR`)
-  - [x] Counters, prescalers, auto-reload layout (`CNT`, `PSC`, `ARR`)
-  - [x] All Capture/Compare channels (`CCR1`–`CCR4`, `CCMR1`, `CCMR2`, `CCER`)
-  - [x] Advanced DMA Burst control and trigger remapping (`DCR`, `DMAR`, `OR`)
 - [x] **GPIO (General-Purpose I/O): Fully Completed (100%)**
   - [x] Port addressing & base peripheral mapping (`GPIOA`–`GPIOE`, `GPIOH`)
   - [x] Pin configuration & mode control (`MODER`, `OTYPER`, `OSPEEDR`, `PUPDR`)
   - [x] Atomic I/O data operations (`IDR`, `ODR`, `BSRR` single-bit and bulk set/reset/toggle)
   - [x] Configuration lock sequence & alternate functions (`LCKR`, `AFRL`, `AFRH`)
+- [x] **TIM2–TIM5 (General-Purpose Timers): Fully Completed (100%)**
+  - [x] Core structures, control logic, and atomic status flags (`CR1`, `CR2`, `SMCR`, `DIER`, `SR`, `EGR`)
+  - [x] Counters, prescalers, auto-reload layout (`CNT`, `PSC`, `ARR`)
+  - [x] All Capture/Compare channels (`CCR1`–`CCR4`, `CCMR1`, `CCMR2`, `CCER`)
+  - [x] Advanced DMA Burst control and trigger remapping (`DCR`, `DMAR`, `OR`)
+- [x] **USART (USART1, USART2, USART6): Fully Completed (100%)**
+  - [x] APB1/APB2 peripheral addressing and register layout (`SR`, `DR`, `BRR`, `CR1`–`CR3`, `GTPR`)
+  - [x] Atomic `rc_w0` status flag clearing (`RXNE`, `TC`, `LBD`, `CTS`) and direct `DR`/`BRR` writes
+  - [x] Asynchronous, synchronous, hardware flow control (`RTS`/`CTS`), LIN, IrDA, Smartcard, and DMA triggers
 - [x] **Documentation & Examples:**
-  - [x] Full Doxygen documentation across `RCC`, `GPIOx`, and `TIMx`
-  - [x] Hardware-tested LED chaser example (`examples/01_blinky_tim2`)
-- [ ] Remaining MCU periphery (`FLASH`, `PWR`, `USART`, `SPI`, `I2C`, `DMA`, `EXTI`) — *In Progress*
+  - [x] Full Doxygen documentation across `RCC`, `GPIOx`, `TIMx`, and `USART`
+  - [x] `examples/01_blinky_tim2` — Hardware-tested LED chaser using `TIM2` polling
+  - [x] `examples/02_pwm_breathing_led` — 1 kHz hardware PWM LED fade using `TIM2_CH1` and `TIM3`
+  - [x] `examples/03_usart_tx` — Periodic serial transmission over `USART2` (`PA2`/`PA3`) clocked by 25 MHz `HSE`
+- [ ] Remaining MCU periphery (`FLASH`, `PWR`, `SPI`, `I2C`, `DMA`, `EXTI`) — *In Progress*
 
 ## Generating Documentation
 
