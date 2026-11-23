@@ -421,9 +421,9 @@ typedef enum {
  * @see    PLAY32_GPIOx_MODER_Mode
  */
 typedef enum {
-    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_NO_PULL_UP_PULL_DOWN = 0U, /**< No pull-up, no pull-down (floating input / standard output). */
-    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_PULL_UP              = 1U, /**< Weak internal pull-up resistor enabled. */
-    PLAY32_GPIOx_PUPDR_PULL_UP_PULL_DOWN_PULL_DOWN            = 2U  /**< Weak internal pull-down resistor enabled. */
+    PLAY32_GPIOx_PUPDR_NO_PULL_UP_PULL_DOWN = 0U, /**< No pull-up, no pull-down (floating input / standard output). */
+    PLAY32_GPIOx_PUPDR_PULL_UP              = 1U, /**< Weak internal pull-up resistor enabled. */
+    PLAY32_GPIOx_PUPDR_PULL_DOWN            = 2U  /**< Weak internal pull-down resistor enabled. */
 } PLAY32_GPIOx_PUPDR_PullUpPullDown;
 
 #pragma endregion
