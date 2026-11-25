@@ -47,7 +47,7 @@ void init_example(void) {
 
 ## Development Status
 
-This project is actively under development. Reset & Clock Control (**RCC**), Power Controller (**PWR**), Embedded Flash Interface (**FLASH**), General-Purpose I/O (**GPIO**), General-Purpose Timers (**TIM2–TIM5**), and Universal Synchronous/Asynchronous Receiver-Transmitter (**USART1, USART2, USART6**) are **100% complete and fully operational**, along with full Doxygen API documentation and hardware-verified examples. Work is currently ongoing to expand this architecture to the remaining periphery of the MCU.
+This project is actively under development. Core system, clock, power, Flash, I/O, interrupt, timer, and serial modules (**RCC**, **PWR**, **FLASH**, **GPIO**, **SYSCFG**, **EXTI**, **NVIC**, **TIM2–TIM5**, and **USART1/2/6**) are **100% complete and fully operational**, along with full Doxygen API documentation and hardware-verified examples. Work is currently ongoing to expand this architecture to the remaining periphery of the MCU.
 
 - [x] **RCC (Reset and Clock Control): Fully Completed (100%)**
   - [x] Oscillator & PLL control and status (`CR`, `PLLCFGR`, `PLLI2SCFGR`, `SSCGR`)
@@ -67,6 +67,11 @@ This project is actively under development. Reset & Clock Control (**RCC**), Pow
   - [x] Pin configuration & mode control (`MODER`, `OTYPER`, `OSPEEDR`, `PUPDR`)
   - [x] Atomic I/O data operations (`IDR`, `ODR`, `BSRR` single-bit and bulk set/reset/toggle)
   - [x] Configuration lock sequence & alternate functions (`LCKR`, `AFRL`, `AFRH`)
+- [x] **SYSCFG, EXTI & NVIC (System Config & Interrupts): Fully Completed (100%)**
+  - [x] Memory remap (`MEMRMP`), ADC noise reduction (`PMC`), and I/O compensation cell (`CMPCR`)
+  - [x] `EXTI0`–`EXTI15` GPIO port multiplexers (`EXTICR1`–`EXTICR4`)
+  - [x] External & internal interrupt/event masks, rising/falling triggers, software triggers (`SWIER`), and atomic `rc_w1` pending flag clearing (`PR`)
+  - [x] Cortex-M4 `NVIC` vector table (`PLAY32_IRQn`), enable/disable, priority levels, and global interrupt controls
 - [x] **TIM2–TIM5 (General-Purpose Timers): Fully Completed (100%)**
   - [x] Core structures, control logic, and atomic status flags (`CR1`, `CR2`, `SMCR`, `DIER`, `SR`, `EGR`)
   - [x] Counters, prescalers, auto-reload layout (`CNT`, `PSC`, `ARR`)
@@ -77,11 +82,11 @@ This project is actively under development. Reset & Clock Control (**RCC**), Pow
   - [x] Atomic `rc_w0` status flag clearing (`RXNE`, `TC`, `LBD`, `CTS`) and direct `DR`/`BRR` writes
   - [x] Asynchronous, synchronous, hardware flow control (`RTS`/`CTS`), LIN, IrDA, Smartcard, and DMA triggers
 - [x] **Documentation & Examples:**
-  - [x] Full Doxygen documentation across `RCC`, `PWR`, `FLASH`, `GPIOx`, `TIMx`, and `USART`
+  - [x] Full Doxygen documentation across `RCC`, `PWR`, `FLASH`, `GPIOx`, `SYSCFG`, `EXTI`, `NVIC`, `TIMx`, and `USART`
   - [x] `examples/01_blinky_tim2` — Hardware-tested LED chaser using `TIM2` polling
   - [x] `examples/02_pwm_breathing_led` — 1 kHz hardware PWM LED fade using `TIM2_CH1` and `TIM3`
   - [x] `examples/03_usart_tx` — Periodic serial transmission over `USART2` (`PA2`/`PA3`) clocked by 25 MHz `HSE`
-- [ ] Remaining MCU periphery (`SPI`, `I2C`, `ADC`, `DMA`, `EXTI`, `RTC`, `IWDG`) — *In Progress*
+- [ ] Remaining MCU periphery (`SPI`, `I2C`, `ADC`, `DMA`, `RTC`, `IWDG`) — *In Progress*
 
 ## Generating Documentation
 
