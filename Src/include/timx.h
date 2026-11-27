@@ -145,16 +145,16 @@ X(prescaler,                             PSC,     PSC,         Prescaler,       
 X(auto_reload_register,                  ARR,     ARR,         AutoReloadRegister,                 SET_DIRECT  )\
 \
 /*************************************** TIMx CCR1 REGISTER ***************************************************/\
-X(capture_compare_1_reister,             CCR1,    CCR1,        CaptureCompare1Register,            SET_DIRECT  )\
+X(capture_compare_1_register,             CCR1,    CCR1,        CaptureCompare1Register,            SET_DIRECT  )\
 \
 /*************************************** TIMx CCR2 REGISTER ***************************************************/\
-X(capture_compare_2_reister,             CCR2,    CCR2,        CaptureCompare2Register,            SET_DIRECT  )\
+X(capture_compare_2_register,             CCR2,    CCR2,        CaptureCompare2Register,            SET_DIRECT  )\
 \
 /*************************************** TIMx CCR3 REGISTER ***************************************************/\
-X(capture_compare_3_reister,             CCR3,    CCR3,        CaptureCompare3Register,            SET_DIRECT  )\
+X(capture_compare_3_register,             CCR3,    CCR3,        CaptureCompare3Register,            SET_DIRECT  )\
 \
 /*************************************** TIMx CCR4 REGISTER ***************************************************/\
-X(capture_compare_4_reister,             CCR4,    CCR4,        CaptureCompare4Register,            SET_DIRECT  )\
+X(capture_compare_4_register,             CCR4,    CCR4,        CaptureCompare4Register,            SET_DIRECT  )\
 \
 /*************************************** TIMx DCR REGISTER ****************************************************/\
 X(dma_base_address,                      DCR,     DBA,         DMABaseAddress,                     SET_RMW     )\

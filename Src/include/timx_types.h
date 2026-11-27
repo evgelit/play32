@@ -1271,10 +1271,10 @@ typedef PLAY32_TIMx_Switch PLAY32_TIMx_CCMR2_OutputCompare3ClearEnable;
  * @warning CC4S bits are writable only when the channel is disabled (CC4E = 0 in TIMx_CCER).
  */
 typedef enum {
-    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC2_AS_OUTPUT             = 0U, /**< CC4 channel is configured as output. */
-    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC2_AS_INPUT_IC4_STRAIGHT = 1U, /**< CC4 channel is configured as input, IC4 is mapped on TI4. */
-    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC2_AS_INPUT_IC4_CROSS    = 2U, /**< CC4 channel is configured as input, IC4 is mapped on TI3. */
-    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC2_AS_INPUT_IC4_TRC      = 3U  /**< CC4 channel is configured as input, IC4 is mapped on TRC (requires internal trigger selected via TS). */
+    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC4_AS_OUTPUT             = 0U, /**< CC4 channel is configured as output. */
+    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC4_AS_INPUT_IC4_STRAIGHT = 1U, /**< CC4 channel is configured as input, IC4 is mapped on TI4. */
+    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC4_AS_INPUT_IC4_CROSS    = 2U, /**< CC4 channel is configured as input, IC4 is mapped on TI3. */
+    PLAY32_TIMx_CCMR2_CAPTURE_COMPARE_4_SELECTION_CC4_AS_INPUT_IC4_TRC      = 3U  /**< CC4 channel is configured as input, IC4 is mapped on TRC (requires internal trigger selected via TS). */
 } PLAY32_TIMx_CCMR2_CaptureCompare4Selection;
 
 /**
